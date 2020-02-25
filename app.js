@@ -133,7 +133,7 @@ let genFlexMessage = (ledOne, ledTwo) => {
               },
               {
                 "type": "text",
-                "text": (ledOne == false) ? "กำลังสตาร์ท" : "รถหยุุดอยู่",
+                "text": (ledOne == false) ? "รถทำงานอยู่" : "รถหยุุดอยู่",
                 "align": "start",
                 "weight": "bold",
                 "color": (ledOne == false) ? "#FF0000" : "#000000",
