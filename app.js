@@ -184,7 +184,7 @@ let genFlexMessage = (ledOne, ledTwo) => {
             "type": "button",
             "action": {
               "type": "message",
-              "label": `${(ledTwo == false) ? "กำลังสตาร์ทรถ" : "สตาร์ทรถ"}`,
+              "label": `${(ledOne == false) ? "กำลังสตาร์ทรถ" : "สตาร์ทรถ"}`,
               "text": `${(ledTwo == false) ? "กำลังสตาร์ทรถ" : "สตาร์ทรถ"}`
             },
             "height": "sm",
