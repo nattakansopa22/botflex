@@ -51,15 +51,15 @@ const client = mqtt.connect('mqtt://hairdresser.cloudmqtt.com',  // Server MQTT 
     'Authorization': `Bearer ${TOKEN}`
   };
 
-  if (message == 'บิดกุญแจ SupperCub' || message == 'หยุดรถ SupperCub') {
-    if (message == 'บิดกุญแจ SupperCub') {
+  if (message == 'สตาร์ทรถ SupperCub' || message == 'กำลังสตาร์ท SupperCub') {
+    if (message == 'สตาร์ทรถ SupperCub') {
       await mqttMessage(LED_TOPIC, 'LEDON_ONE');
     } else {
       await mqttMessage(LED_TOPIC, 'LEDOFF_ONE');
     }
   }
-  if (message == 'สตาร์ทรถ' || message == 'กำลังสตาร์ท') {
-    if (message == 'สตาร์ทรถ') {
+  if (message == 'บิดกุญแจ SupperCub' || message == 'หยุดรถ SupperCub') {
+    if (message == 'บิดกุญแจ SupperCub') {
       await mqttMessage(LED_TOPIC, 'LEDON_TWO');
     } else {
       await mqttMessage(LED_TOPIC, 'LEDOFF_TWO');
@@ -174,8 +174,8 @@ let genFlexMessage = (ledOne, ledTwo) => {
             "type": "button",
             "action": {
               "type": "message",
-              "label": `${(ledOne == false) ? "กำลังสตาร์ท" : "สตาร์ทรถ"}`,
-              "text": `${(ledOne == false) ? "กำลังสตาร์ท" : "สตาร์ทรถ"} `
+              "label": `${(ledOne == false) ? "กำลังสตาร์ท" : "สตาร์ทรถ"}SupperCub`,
+              "text": `${(ledOne == false) ? "กำลังสตาร์ท" : "สตาร์ทรถ"} SupperCub`
             },
             "height": "sm",
             "style": "link"
