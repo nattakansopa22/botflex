@@ -134,10 +134,10 @@ let genFlexMessage = (ledOne, ledTwo) => {
               },
               {
                 "type": "text",
-                "text": (ledOne == false) ? "Start" : "Stop",
+                "text": (ledTwo == false) ? "Start" : "Stop",
                 "align": "start",
                 "weight": "bold",
-                "color": (ledOne == false) ? "#FF0000" : "#000000",
+                "color": (ledTwo == false) ? "#FF0000" : "#000000",
               }
             ]
           },
@@ -156,10 +156,10 @@ let genFlexMessage = (ledOne, ledTwo) => {
               },
               {
                 "type": "text",
-                "text": (ledTwo == false) ? "รถทำงานอยู่" : "รถหยุดอยู่",
+                "text": (ledOne == false) ? "รถทำงานอยู่" : "รถหยุดอยู่",
                 "align": "start",
                 "weight": "bold",
-                "color": (ledTwo == false) ? "#FF0000" : "#000000",
+                "color": (ledOne == false) ? "#FF0000" : "#000000",
               }
             ]
           }
