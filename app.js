@@ -126,7 +126,7 @@ let genFlexMessage = (ledOne, ledTwo) => {
             "contents": [
               {
                 "type": "text",
-                "text": "รถCbr650r",
+                "text": "สถานะรถขณะนี้",
                 "align": "start",
                 "gravity": "top",
                 "weight": "bold"
