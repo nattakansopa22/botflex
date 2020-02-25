@@ -97,7 +97,7 @@ let genFlexMessage = (ledOne, ledTwo) => {
       "type": "bubble",
       "hero": {
         "type": "image",
-        "url": "https://www.bigbikeinfo.com/wp-content/uploads/2018/11/CBR650R_2019.jpg",
+        "url": "https://www.aphonda.co.th/honda2017/uploads/product_gallery_big/photos/shares/Product_List/Automatic/scoopyi2018/color/Scoopy_i_Matt_Black_colorchart_620x350_px.jpg",
         "size": "full",
         "aspectRatio": "20:13",
         "aspectMode": "cover",
@@ -158,7 +158,7 @@ let genFlexMessage = (ledOne, ledTwo) => {
                 "text": (ledOne == false) ? "รถทำงานอยู่" : "รถหยุดอยู่",
                 "align": "start",
                 "weight": "bold",
-                "color": (ledTwo == false) ? "#FF0000" : "#000000",
+                "color": (ledOne == false) ? "#FF0000" : "#000000",
               }
             ]
           }
