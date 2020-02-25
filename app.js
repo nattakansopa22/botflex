@@ -11,12 +11,11 @@ let status = [false, false];
 const LED_TOPIC = `/Car`;// Create a MQTT Client
 const mqtt = require('mqtt');
 // Create a client connection to CloudMQTT for live data
-const client = mqtt.connect('mqtt://hairdresser.cloudmqtt.com',  
-//Client Setting
+const client = mqtt.connect('mqtt://hairdresser.cloudmqtt.com',  // Server MQTT ของเรานะ
 {
-  username: 'qtjwedau', 
-  password: 'pSYbwv9cIIWS', 
-  port: 16093 
+  username: 'qtjwedau', // Username MQTT ของเรานะ
+  password: 'pSYbwv9cIIWS', // Password MQTT ของเรานะ
+  port: 16093 // Port MQTT ของเรานะ
 });client.on('connect', function() { 
   // When connected
   console.log("Connected to CloudMQTT");client.subscribe('/Car', function() {
@@ -52,18 +51,18 @@ const client = mqtt.connect('mqtt://hairdresser.cloudmqtt.com',
     'Authorization': `Bearer ${TOKEN}`
   };
 
-  if (message == 'บิดกุญแจ Scoopy I' || message == 'หยุดรถ Scoopy I') {
-    if (message == 'บิดกุญแจ Scoopy I') {
-      await mqttMessage(LED_TOPIC, 'LEDON_TWO');
-    } else {
-      await mqttMessage(LED_TOPIC, 'LEDOFF_TWO');
-    }
-  }
-  if (message == 'กำลังสตาร์ทรถ' || message == 'สตาร์ทรถ') {
-    if (message == 'กำลังสตาร์ทรถ') {
+  if (message == 'สตาร์ทรถ SupperCub' || message == 'กำลังสตาร์ท SupperCub') {
+    if (message == 'สตาร์ทรถ SupperCub') {
       await mqttMessage(LED_TOPIC, 'LEDON_ONE');
     } else {
       await mqttMessage(LED_TOPIC, 'LEDOFF_ONE');
+    }
+  }
+  if (message == 'บิดกุญแจ SupperCub' || message == 'หยุดรถ SupperCub') {
+    if (message == 'บิดกุญแจ SupperCub') {
+      await mqttMessage(LED_TOPIC, 'LEDON_TWO');
+    } else {
+      await mqttMessage(LED_TOPIC, 'LEDOFF_TWO');
     }
   }
   mqttMessage(LED_TOPIC, 'GET');if (message == 'สถานะทั้งหมด') {
@@ -98,7 +97,7 @@ let genFlexMessage = (ledOne, ledTwo) => {
       "type": "bubble",
       "hero": {
         "type": "image",
-        "url": "https://www.aphonda.co.th/honda2017/uploads/product_gallery_big/photos/shares/Product_List/Automatic/scoopyi2018/color/Scoopy_i_Matt_Black_colorchart_620x350_px.jpg",
+        "url": "https://www.bigbikeinfo.com/wp-content/uploads/2018/11/CBR650R_2019.jpg",
         "size": "full",
         "aspectRatio": "20:13",
         "aspectMode": "cover",
@@ -127,17 +126,17 @@ let genFlexMessage = (ledOne, ledTwo) => {
             "contents": [
               {
                 "type": "text",
-                "text": "Scoopy i",
+                "text": "รถCbr650r",
                 "align": "start",
                 "gravity": "top",
                 "weight": "bold"
               },
               {
                 "type": "text",
-                "text": (ledTwo == false) ? "Start" : "Stop",
+                "text": (ledOne == false) ? "กำลังสตาร์ท" : "รถหยุุดอยู่",
                 "align": "start",
                 "weight": "bold",
-                "color": (ledTwo == false) ? "#FF0000" : "#000000",
+                "color": (ledOne == false) ? "#FF0000" : "#000000",
               }
             ]
           },
@@ -149,17 +148,17 @@ let genFlexMessage = (ledOne, ledTwo) => {
             "contents": [
               {
                 "type": "text",
-                "text": "สถานะรถขณะนี้",
+                "text": "รถSupperCub",
                 "align": "start",
                 "gravity": "top",
                 "weight": "bold"
               },
               {
                 "type": "text",
-                "text": (ledOne == false) ? "รถหยุดอยู่" : "รถทำงานอยู่",
+                "text": (ledTwo == false) ? "Start" : "Stop",
                 "align": "start",
                 "weight": "bold",
-                "color": (ledOne == false) ? "#FF0000" : "#000000",
+                "color": (ledTwo == false) ? "#FF0000" : "#000000",
               }
             ]
           }
@@ -175,8 +174,8 @@ let genFlexMessage = (ledOne, ledTwo) => {
             "type": "button",
             "action": {
               "type": "message",
-              "label": `${(ledOne == false) ? "บิดกุญแจ" : "หยุดรถ"}Scoopy I`,
-              "text": `${(ledOne == false) ? "หบิดกุญแจ" : "หยุดรถ"} Scoopy I`
+              "label": `${(ledOne == false) ? "กำลังสตาร์ท" : "สตาร์ทรถ"}SupperCub`,
+              "text": `${(ledOne == false) ? "กำลังสตาร์ท" : "สตาร์ทรถ"} SupperCub`
             },
             "height": "sm",
             "style": "link"
@@ -185,8 +184,8 @@ let genFlexMessage = (ledOne, ledTwo) => {
             "type": "button",
             "action": {
               "type": "message",
-              "label": `${(ledTwo == false) ? "กำลังสตาร์ทรถ" : "สตาร์ทรถ"}`,
-              "text": `${(ledTwo == false) ? "กำลังสตาร์ทรถ" : "สตาร์ทรถ"}`
+              "label": `${(ledTwo == false) ? "หยุดรถ" : "บิดกุญแจ"}SupperCub`,
+              "text": `${(ledTwo == false) ? "หยุดรถ" : "บิดกุญแจ"} SupperCub`
             },
             "height": "sm",
             "style": "link"
