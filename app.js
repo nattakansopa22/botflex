@@ -54,16 +54,16 @@ const client = mqtt.connect('mqtt://hairdresser.cloudmqtt.com',
 
   if (message == 'บิดกุญแจ Scoopy I' || message == 'หยุดรถ Scoopy I') {
     if (message == 'บิดกุญแจ Scoopy I') {
-      await mqttMessage(LED_TOPIC, 'LEDON_ONE');
+      await mqttMessage(LED_TOPIC, 'LEDON_TWO');
     } else {
-      await mqttMessage(LED_TOPIC, 'LEDOFF_ONE');
+      await mqttMessage(LED_TOPIC, 'LEDOFF_TWO');
     }
   }
   if (message == 'กำลังสตาร์ทรถ' || message == 'สตาร์ทรถ') {
     if (message == 'กำลังสตาร์ทรถ') {
-      await mqttMessage(LED_TOPIC, 'LEDON_TWO');
+      await mqttMessage(LED_TOPIC, 'LEDON_ONE');
     } else {
-      await mqttMessage(LED_TOPIC, 'LEDOFF_TWO');
+      await mqttMessage(LED_TOPIC, 'LEDOFF_ONE');
     }
   }
   mqttMessage(LED_TOPIC, 'GET');if (message == 'สถานะทั้งหมด') {
