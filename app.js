@@ -11,11 +11,12 @@ let status = [false, false];
 const LED_TOPIC = `/Car`;// Create a MQTT Client
 const mqtt = require('mqtt');
 // Create a client connection to CloudMQTT for live data
-const client = mqtt.connect('mqtt://hairdresser.cloudmqtt.com',  // Server MQTT ของเรานะ
+const client = mqtt.connect('mqtt://hairdresser.cloudmqtt.com',  
+//Client Setting
 {
-  username: 'qtjwedau', // Username MQTT ของเรานะ
-  password: 'pSYbwv9cIIWS', // Password MQTT ของเรานะ
-  port: 16093 // Port MQTT ของเรานะ
+  username: 'qtjwedau', 
+  password: 'pSYbwv9cIIWS', 
+  port: 16093 
 });client.on('connect', function() { 
   // When connected
   console.log("Connected to CloudMQTT");client.subscribe('/Car', function() {
