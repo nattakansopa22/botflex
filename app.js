@@ -51,15 +51,15 @@ const client = mqtt.connect('mqtt://hairdresser.cloudmqtt.com',  // Server MQTT 
     'Authorization': `Bearer ${TOKEN}`
   };
 
-  if (message == 'สตาร์ทรถ SupperCub' || message == 'กำลังสตาร์ท SupperCub') {
-    if (message == 'สตาร์ทรถ SupperCub') {
+  if (message == 'บิดกุญแจ Scoopy I' || message == 'หยุดรถ Scoopy I') {
+    if (message == 'บิดกุญแจ Scoopy I') {
       await mqttMessage(LED_TOPIC, 'LEDON_ONE');
     } else {
       await mqttMessage(LED_TOPIC, 'LEDOFF_ONE');
     }
   }
-  if (message == 'บิดกุญแจ SupperCub' || message == 'หยุดรถ SupperCub') {
-    if (message == 'บิดกุญแจ SupperCub') {
+  if (message == 'กำลังสตาร์ทรถ' || message == 'สตาร์ทรถ') {
+    if (message == 'กำลังสตาร์ทรถ') {
       await mqttMessage(LED_TOPIC, 'LEDON_TWO');
     } else {
       await mqttMessage(LED_TOPIC, 'LEDOFF_TWO');
@@ -126,14 +126,14 @@ let genFlexMessage = (ledOne, ledTwo) => {
             "contents": [
               {
                 "type": "text",
-                "text": "สถานะรถขณะนี้",
+                "text": "Scoopy i",
                 "align": "start",
                 "gravity": "top",
                 "weight": "bold"
               },
               {
                 "type": "text",
-                "text": (ledOne == false) ? "รถทำงานอยู่" : "รถหยุุดอยู่",
+                "text": (ledOne == false) ? "Start" : "Stop",
                 "align": "start",
                 "weight": "bold",
                 "color": (ledOne == false) ? "#FF0000" : "#000000",
@@ -148,14 +148,14 @@ let genFlexMessage = (ledOne, ledTwo) => {
             "contents": [
               {
                 "type": "text",
-                "text": "รถSupperCub",
+                "text": "สถานะรถขณะนี้",
                 "align": "start",
                 "gravity": "top",
                 "weight": "bold"
               },
               {
                 "type": "text",
-                "text": (ledTwo == false) ? "Start" : "Stop",
+                "text": (ledTwo == false) ? "รถทำงานอยู่" : "รถหยุดอยู่",
                 "align": "start",
                 "weight": "bold",
                 "color": (ledTwo == false) ? "#FF0000" : "#000000",
@@ -174,8 +174,8 @@ let genFlexMessage = (ledOne, ledTwo) => {
             "type": "button",
             "action": {
               "type": "message",
-              "label": `${(ledOne == false) ? "กำลังสตาร์ท" : "สตาร์ทรถ"}SupperCub`,
-              "text": `${(ledOne == false) ? "กำลังสตาร์ท" : "สตาร์ทรถ"} SupperCub`
+              "label": `${(ledOne == false) ? "หยุดรถ" : "บิดกุญแจ"}Scoopy I`,
+              "text": `${(ledOne == false) ? "หยุดรถ" : "บิดกุญแจ"} Scoopy I`
             },
             "height": "sm",
             "style": "link"
@@ -184,8 +184,8 @@ let genFlexMessage = (ledOne, ledTwo) => {
             "type": "button",
             "action": {
               "type": "message",
-              "label": `${(ledTwo == false) ? "หยุดรถ" : "บิดกุญแจ"}SupperCub`,
-              "text": `${(ledTwo == false) ? "หยุดรถ" : "บิดกุญแจ"} SupperCub`
+              "label": `${(ledTwo == false) ? "กำลังสตาร์ทรถ" : "สตาร์ทรถ"}`,
+              "text": `${(ledTwo == false) ? "กำลังสตาร์ทรถ" : "สตาร์ทรถ"}`
             },
             "height": "sm",
             "style": "link"
