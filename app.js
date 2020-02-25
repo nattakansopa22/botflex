@@ -155,10 +155,10 @@ let genFlexMessage = (ledOne, ledTwo) => {
               },
               {
                 "type": "text",
-                "text": (ledOne == false) ? "รถทำงานอยู่" : "รถหยุดอยู่",
+                "text": (ledTwo == false) ? "รถทำงานอยู่" : "รถหยุดอยู่",
                 "align": "start",
                 "weight": "bold",
-                "color": (ledOne == false) ? "#FF0000" : "#000000",
+                "color": (ledTwo == false) ? "#FF0000" : "#000000",
               }
             ]
           }
@@ -184,7 +184,7 @@ let genFlexMessage = (ledOne, ledTwo) => {
             "type": "button",
             "action": {
               "type": "message",
-              "label": `${(ledOne == false) ? "กำลังสตาร์ทรถ" : "สตาร์ทรถ"}`,
+              "label": `${(ledTwo == false) ? "กำลังสตาร์ทรถ" : "สตาร์ทรถ"}`,
               "text": `${(ledTwo == false) ? "กำลังสตาร์ทรถ" : "สตาร์ทรถ"}`
             },
             "height": "sm",
