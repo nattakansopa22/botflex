@@ -97,7 +97,7 @@ let genFlexMessage = (ledOne, ledTwo) => {
       "type": "bubble",
       "hero": {
         "type": "image",
-        "url": "https://www.bigbikeinfo.com/wp-content/uploads/2018/11/CBR650R_2019.jpg",
+        "url": "https://www.aphonda.co.th/honda2017/uploads/product_gallery_big/photos/shares/Product_List/Family/Supercub-2019/color/02.png",
         "size": "full",
         "aspectRatio": "20:13",
         "aspectMode": "cover",
